@@ -155,6 +155,12 @@
                                 (k = webStorage.key(i)) && storageKeyPrefix === k.slice(0, prefixLength) && ($storage[k.slice(prefixLength)] = deserializer(webStorage.getItem(k)));
                             }
                         },
+                        $setKeyPrefix: function(prefix){
+                          if (prefix){
+                            storageKeyPrefix = prefix;
+                            prefixLength = storageKeyPrefix.length;
+                          }
+                        },
                         $apply: function() {
                             var temp$storage;
 
